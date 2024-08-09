@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Profile from "@components/Profile";
-import { Router } from "next/router";
 
 function ProfilePage() {
   const router = useRouter();

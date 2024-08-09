@@ -24,6 +24,17 @@ const Feed = () => {
     setSearchText(e.target.value);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      const fetchPostsByPrompt = async () => {
+        const response = await fetch(`/api/prompt/search-prompt/${searchText}`);
+        const data = await response.json();
+        setPosts(data);
+      };
+      fetchPostsByPrompt();
+    }
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/prompt");
@@ -41,6 +52,7 @@ const Feed = () => {
           placeholder="Search for a tag or a username"
           value={searchText}
           onChange={handleSearchChange}
+          onKeyDown={handleKeyDown}
           required
           className="search_input peer"
         />

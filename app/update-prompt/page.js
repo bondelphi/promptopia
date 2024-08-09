@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Form from "@components/Form";
 
-export default function EditPrompt() {
+export default function UpdatePrompt() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
@@ -30,7 +30,7 @@ export default function EditPrompt() {
     e.preventDefault();
     setSubmitting(true);
 
-    if (!promptId) return alert("Prompt ID not found")
+    if (!promptId) return alert("Prompt ID not found");
     try {
       const res = await fetch(`/api/prompt/${promptId}`, {
         method: "PATCH",

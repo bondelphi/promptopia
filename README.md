@@ -42,4 +42,14 @@ play @ 3.05h
 ## nextAuth.js
 openssl rand -base64 32
 
+#git
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/bondelphi/promptopia.git
+git push -u origin main
+
+#git update
+git add .
 

@@ -12,6 +12,7 @@ export default function CreatePrompt() {
     prompt: "",
     tag: "",
   });
+
   const createPrompt = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -33,6 +34,7 @@ export default function CreatePrompt() {
       setSubmitting(false);
     }
   };
+  
   return (
     <Form
       type="Create"
